@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 //default schema
 const movieSchema = new mongoose.Schema({
   name: { type: String, required: true, trim: true },
@@ -19,13 +18,16 @@ const movieSchema = new mongoose.Schema({
 
 //creating models
 const movieModel = mongoose.model("Movie", movieSchema);
-const singleDoc = async () => {
+const findDocwithField = async () => {
   try {
-    const result = await movieModel.findById("66a9c9bdd36f2c483dc30928");
-    console.log(result.name)
-    console.log(result.genre)
+    const result = await movieModel.find().sort({name:1});
+    console.clear();
+    console.log(result);
+    console.clear();
+    
+    
   } catch (error) {
     console.log(error);
   }
-}
-export {singleDoc};
+};
+export { findDocwithField };
