@@ -22,7 +22,8 @@ const updateByFileds = async (id) => {
   try {
     //updateOne(filter, whatToChange?)
 
-    const result = await movieModel.updateOne({ _id: id }, { rating: 76 });
+    const result = await movieModel.updateMany({name:
+"golmaal 4"}, { name: "updateByFileds.js" });
 
     console.log(result);
   } catch (error) {
