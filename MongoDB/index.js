@@ -1,5 +1,6 @@
 import express from 'express'
 import connectDB from './db/connectDB.js';
+import { deleteQuery } from './models/delete.js';
 //import { insertmanyDoc} from './models/Movies.js'
 //single doc
 //import { singleDoc } from './models/singalDoc.js';
@@ -7,7 +8,9 @@ import connectDB from './db/connectDB.js';
 //import { findDocwithField } from './models/findDocWithFiled.js';
 //update data updateData.js
 //import { updateById } from './models/updateData.js';
-import {updateByFileds} from './models/updateByFileds.js'
+//import {updateByFileds} from './models/updateByFileds.js'
+//delete the data from data base
+
 const app = express();
 const port = process.env.PORT || 8000;
 const DATABASE_URL = process.env.DATABASE_URL || "mongodb://127.0.0.1:27017";
@@ -22,8 +25,9 @@ connectDB(DATABASE_URL)
 //updateData.js
 //updateById("66a9c9c2f78fe7534723a505");
 //updatebyfilds
-updateByFileds();
-
+//updateByFileds();
+//delete.js
+deleteQuery();
 app.listen(port, () => {
   console.log(`server listing on this port ${port}`)
 })
