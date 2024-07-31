@@ -18,16 +18,15 @@ const movieSchema = new mongoose.Schema({
 
 //creating models
 const movieModel = mongoose.model("Movie", movieSchema);
-const updateById = async (id) => {
+const updateByFileds = async (id) => {
   try {
     //updateOne(filter, whatToChange?)
 
-    const result = await movieModel.updateOne({_id:id},{rating:76})
-    
+    const result = await movieModel.updateOne({ _id: id }, { rating: 76 });
+
     console.log(result);
-    
   } catch (error) {
     console.log(error);
   }
 };
-export { updateById };
+export { updateByFileds };
