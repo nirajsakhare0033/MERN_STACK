@@ -19,24 +19,83 @@ const movieSchema = new mongoose.Schema({
 //creating models
 const movieModel = mongoose.model("Movie", movieSchema);
 
-const createDoc = async () => {
+const insertmanyDoc = async () => {
   try {
-    //creating new documnents
-   const quary1 =  new movieModel({
-      name:"Extraction 3",
-      rating:8,
-      money:102029,
-      genre:["action", "si-fi"],
-      isActive: true,
-      comments: [{value:"that was a amazing movie"}]
+  //   //creating new documnents
+  //   const quary1 = new movieModel({
+  //     name: "Extraction 3",
+  //     rating: 8,
+  //     money: 102029,
+  //     genre: ["action", "si-fi"],
+  //     isActive: true,
+  //     comments: [{ value: "that was a amazing movie" }],
+  //   });
+  //   const result = await quary1.save();
+  //   console.log(result);
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
-    })
-    const result = await quary1.save()
-    console.log(result)
+  // //creating 2nd quary
+  // try {
+  //   //creating new documnents
+  //   const quary1 = new movieModel({
+  //     name: "golmaal 4",
+  //     rating: 7.5,
+  //     money: 200000,
+  //     genre: ["comedy", "drama", "romance"],
+  //     isActive: true,
+  //     comments: [{ value: "This is family drama movie" }],
+  //   });
+  //   const result = await quary1.save();
+  //   console.log(result);
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
-  } catch (error) {
+  // //creating 2nd quary
+  // try {
+  //   //creating new documnents
+  //   const quary1 = new movieModel({
+  //     name: "game of thrones",
+  //     rating: 7.5,
+  //     money: 200000,
+  //     genre: ["comedy", "drama", "romance"],
+  //     isActive: true,
+  //     comments: [{ value: "This is family drama movie" }],
+  //   });
+
+
+  //   const result = await quary1.save();
+  //   console.log(result);
+  // } catch (error) {
+  //   console.log(error);
+  // }
+
+
+  const result = await movieModel.find(); //getting all data from database
+  //console.log(result)
+
+  //iterating over ther documents
+  result.forEach((movie)=>{
+    console.log(movie.name)
+    console.log(movie.genre)
+    
+  })
+  
+
+
+  }
+  catch (error){
     console.log(error)
   }
+
 }
 
-export { createDoc };
+
+
+   
+  
+
+
+export {  insertmanyDoc };
