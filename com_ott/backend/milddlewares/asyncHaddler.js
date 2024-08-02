@@ -6,3 +6,4 @@ const asyncHanddler = (fn) => (req, res, next) => {
 }
 
 export default asyncHanddler;
+
