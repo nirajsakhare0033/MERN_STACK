@@ -1,12 +1,12 @@
-// authenticate.js
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 import asyncHandler from "./asyncHandler.js";
 
-// Check if the user is authenticated
+// Check if the user is authenticated or not
 const authenticate = asyncHandler(async (req, res, next) => {
   let token;
-  // Read JWT from the cookies
+
+  // Read JWT from the 'jwt' cookie
   token = req.cookies.jwt;
 
   if (token) {
@@ -15,21 +15,22 @@ const authenticate = asyncHandler(async (req, res, next) => {
       req.user = await User.findById(decoded.userId).select("-password");
       next();
     } catch (error) {
-      console.error("JWT verification error:", error.message); // Log the error
-      res.status(401).json({ message: "Not authorized, token failed." });
+      res.status(401);
+      throw new Error("Not authorized, token failed.");
     }
   } else {
-    res.status(401).json({ message: "Not authorized, no token provided." });
+    res.status(401);
+    throw new Error("Not authorized, no token");
   }
 });
 
-// Check if the user is an admin
-const authorizedAdmin = (req, res, next) => {
+// Check if the user is admin or not
+const authorizeAdmin = (req, res, next) => {
   if (req.user && req.user.isAdmin) {
     next();
   } else {
-    res.status(401).json({ message: "Not authorized as an admin." });
+    res.status(401).send("Not authorized as an admin");
   }
 };
 
-export { authenticate, authorizedAdmin };
+export { authenticate, authorizeAdmin };
