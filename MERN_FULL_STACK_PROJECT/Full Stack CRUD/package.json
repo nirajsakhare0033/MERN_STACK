@@ -1,0 +1,18 @@
+{
+  "name": "full-stack-crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd frontend && npm start",
+    "backend": "nodemon backend/index.js",
+    "fullstack": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2"
+  }
+}
