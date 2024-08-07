@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Col, Row,Table,Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 
 const Dashboard = () => {
@@ -21,6 +22,12 @@ const Dashboard = () => {
     fetchUsers();
 
   }, []);
+
+  //update button working and get user by id method backend 
+  const navigate = useNavigate();
+  const handleUpdate = (userId) => {
+    navigate(`/user/${userId}`);
+  }
 
   return <>
 
@@ -44,7 +51,7 @@ const Dashboard = () => {
               <td>{user.email}</td>
               <td>{user.phone}</td>
                <td>
-                <Button variant="warning" onClick>
+                <Button variant="warning" onClick={() => handleUpdate(user.id)}>
                   Update
                 </Button>{" "}
                 <Button variant="danger" onClick>
