@@ -1,3 +1,4 @@
+const userServices = require('../services/userServices.js');
 const UserService = require('../services/userServices.js')
 
 class userController {
@@ -10,6 +11,16 @@ class userController {
     } catch (error) {
       res.status(500).json({error:error.message})
     }
+  }
+
+  async getAllUsers(req, res){
+    try {
+      const users = await userServices.getAllUsers();
+      res.json(users);
+    } catch (error) {
+      
+    }
+
   }
 }
 
