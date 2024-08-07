@@ -53,7 +53,7 @@ const PostUser = () => {
         <Form onSubmit={handleSubmit}>
           <h1>Post New User</h1>
           <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
+            <Form.Label><bold>Name</bold></Form.Label>
             <Form.Control
               type="text"
               placeholder=""
