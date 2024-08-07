@@ -22,6 +22,21 @@ class userController {
     }
 
   }
+
+  //get user by id
+  async getUserById(req, res){
+    const userId = req.params.id;
+    try {
+      const user = await userServices.getUserById(userId);
+      if(!user)
+        return res.status(404).json({error:"user not found in database"})
+      res.json(user);
+    } catch (error) {
+      console.error(error.message)
+      
+    }
+
+  }
 }
 
 module.exports = new userController()
