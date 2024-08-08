@@ -12,6 +12,30 @@ const UpdateUser = () => {
     phone: "",
   });
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:5000/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update user");
+      }
+
+      const data = await response.json();
+      console.log(data);
+      navigate("/");
+    } catch (error) {
+      console.error("Error updating user:", error.message);
+    }
+  };
+
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -36,27 +60,7 @@ const UpdateUser = () => {
     fetchUser();
   }, [id]);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await fetch(`http://localhost:5000/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        console.log("User updated successfully");
-        navigate("/"); 
-      } else {
-        console.error("Failed to update user");
-      }
-    } catch (error) {
-      console.error("Error while updating user", error.message);
-    }
-  };
+  
 
   return (
     <>
