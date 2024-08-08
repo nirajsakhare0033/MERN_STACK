@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
 const UpdateUser = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -11,7 +10,6 @@ const UpdateUser = () => {
     email: "",
     phone: "",
   });
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -34,8 +32,6 @@ const UpdateUser = () => {
       console.error("Error updating user:", error.message);
     }
   };
-
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -43,7 +39,6 @@ const UpdateUser = () => {
       [name]: value,
     });
   };
-
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -59,9 +54,6 @@ const UpdateUser = () => {
     };
     fetchUser();
   }, [id]);
-
-  
-
   return (
     <>
       <div className="center-form">
@@ -105,5 +97,4 @@ const UpdateUser = () => {
     </>
   );
 };
-
 export default UpdateUser;
