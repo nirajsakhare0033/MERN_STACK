@@ -82,7 +82,7 @@ Providing the complete source code for a full-fledged application like "Car Care
     npm init -y
     npm install express mongoose dotenv jsonwebtoken bcrypt cors
     ```
-    
+
 
 2. **Server Setup (`server.js`)**
     ```js
@@ -462,5 +462,3 @@ car-care-anywhere-client
 ```
 
 This structure gives you a solid foundation to build your "Car Care Anywhere" project. You can expand upon it by adding more features, refining the user interface, implementing additional security measures, and optimizing the performance.
-
-
