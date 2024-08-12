@@ -13,7 +13,7 @@ const ArtistSummary = ({ data }) => {
   const poster = useSelector((state) => state.layout.poster);
   return (
     <div className="w-full mb-8 md:mb-10">
-      {/* Mobile & Tablet View */}
+     
       <div className="lg:hidden">
         <h2 className="text-2xl font-medium mb-2" data-cy="artist-name">
           {data?.name}
@@ -32,7 +32,7 @@ const ArtistSummary = ({ data }) => {
         </div>
       </div>
 
-      {/* Desktop View */}
+      
       <div className="w-full lg:flex gap-4 md:gap-10 lg:gap-12">
         <div className="hidden aspect-[0.67/1] h-fit w-[40vw] xl:w-[30vw] 2xl:w-[20vw] lg:block">
           <LazyImage

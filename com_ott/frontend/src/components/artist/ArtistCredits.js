@@ -74,23 +74,22 @@ const ArtistCredits = ({ data }) => {
         </div>
       </div>
 
-      {/* Container */}
-      {/* Acting */}
+      
       {(departmentFilter === "" || departmentFilter === "acting") && (
         <ActingDepartment mediaFilter={mediaFilter} data={data} />
       )}
 
-      {/* Directing */}
+      
       {(departmentFilter === "" || departmentFilter === "directing") && (
         <DirectingDepartment mediaFilter={mediaFilter} data={data} />
       )}
 
-      {/* Production */}
+      
       {(departmentFilter === "" || departmentFilter === "production") && (
         <ProductionDepartment mediaFilter={mediaFilter} data={data} />
       )}
 
-      {/* Writing */}
+     
       {(departmentFilter === "" || departmentFilter === "writing") && (
         <WritingDepartment mediaFilter={mediaFilter} data={data} />
       )}

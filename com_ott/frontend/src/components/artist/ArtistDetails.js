@@ -65,7 +65,7 @@ const ArtistDetails = ({ data }) => {
       </div>
 
       <div className="px-4 md:px-10 lg:px-12">
-        {/* Known For */}
+        
         <div className={`${knownFor ? "" : "hidden"}`}>
           <CardListing
             data={data?.combined_credits.cast.concat(
@@ -74,12 +74,12 @@ const ArtistDetails = ({ data }) => {
           />
         </div>
 
-        {/* Credits */}
+        
         <div className={`${credits ? "" : "hidden"}`}>
           <ArtistCredits data={data?.combined_credits} />
         </div>
 
-        {/* Photos */}
+        
         <div className={`${photos ? "" : "hidden"}`}>
           <ArtistPhotos data={data?.images.profiles} />
         </div>

@@ -77,7 +77,7 @@ const Carousel = ({ data, heading, explore, mediaType }) => {
     }
   };
 
-  // Handle scroll on load
+  
   useEffect(() => {
     if (dynamicWidth > 768) {
       handleScroll();
@@ -86,10 +86,10 @@ const Carousel = ({ data, heading, explore, mediaType }) => {
 
   return (
     <div className="w-full pl-4 md:pl-10 lg:pl-12">
-      {/* Card Actions Body */}
+      
       {cardAction && <CardActions mediaType={mediaType} />}
 
-      {/* Heading */}
+      
       <div
         className="flex items-center font-medium mt-10 mb-2 sm:mb-3 md:mb-4 gap-4"
         data-cy="carousel-heading-container"
@@ -111,15 +111,15 @@ const Carousel = ({ data, heading, explore, mediaType }) => {
         )}
       </div>
 
-      {/* Carousel Wrapper */}
+      
       <div className="relative h-fit w-full">
-        {/* Carousel */}
+        
         <div
           className="carousel w-full lg:py-4 py-2 pr-2 space-x-4 rounded-box"
           ref={itemsContainerRef}
           onScroll={dynamicWidth > 768 ? handleScroll : () => null}
         >
-          {/* Left Cursor */}
+          
           {dynamicWidth > 768 && (
             <div
               ref={leftButtonRef}
@@ -134,13 +134,13 @@ const Carousel = ({ data, heading, explore, mediaType }) => {
             </div>
           )}
 
-          {/* Items Container */}
+          
           <div
             className="flex gap-3 transition-all ease-in"
             ref={carouselContainerRef}
             data-cy="carousel-items-container"
           >
-            {/* Item */}
+            
             {data &&
               data.results.map((item) => (
                 <div
@@ -186,14 +186,14 @@ const Carousel = ({ data, heading, explore, mediaType }) => {
                       </h2>
                     </Link>
                     <div className="hidden sm:flex items-center gap-2">
-                      {/* Card Rating Component */}
+                      
                       <CardRating item={item} />
                       <span className="hidden sm:inline-block">
                         {item.vote_average.toFixed(1)}
                       </span>
                     </div>
 
-                    {/* Card Actions */}
+                    
                     <div
                       className="w-full flex justify-end items-center"
                       onClick={() => {
@@ -207,7 +207,7 @@ const Carousel = ({ data, heading, explore, mediaType }) => {
                 </div>
               ))}
 
-            {/* Explore More */}
+           
             {explore && (
               <Link
                 aria-label="card"
@@ -224,7 +224,7 @@ const Carousel = ({ data, heading, explore, mediaType }) => {
           </div>
         </div>
 
-        {/* Right Cursor */}
+       
         {dynamicWidth > 768 && (
           <div
             ref={rightButtonRef}

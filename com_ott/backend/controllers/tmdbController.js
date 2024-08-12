@@ -41,7 +41,7 @@ const singleShowTrending = async (req, res) => {
   }
 };
 
-// Get Movie List
+
 const getMovieList = async (req, res) => {
   try {
     const request = await axios.get(
@@ -53,7 +53,7 @@ const getMovieList = async (req, res) => {
   }
 };
 
-// Get Movie List
+
 const getShowList = async (req, res) => {
   try {
     const request = await axios.get(
@@ -65,7 +65,7 @@ const getShowList = async (req, res) => {
   }
 };
 
-// Get Movie Trending Page
+
 const getMovieTrendingPage = async (req, res) => {
   try {
     const request = await axios.get(
@@ -77,7 +77,7 @@ const getMovieTrendingPage = async (req, res) => {
   }
 };
 
-// Get Movie Trending Page
+
 const getMovieNowPlayingPage = async (req, res) => {
   try {
     const request = await axios.get(
@@ -89,7 +89,7 @@ const getMovieNowPlayingPage = async (req, res) => {
   }
 };
 
-// Get Movie Popular Page
+
 const getMoviePopularPage = async (req, res) => {
   try {
     const request = await axios.get(
@@ -101,7 +101,7 @@ const getMoviePopularPage = async (req, res) => {
   }
 };
 
-// Get Movie Popular Page
+
 const getMovieTopRatedPage = async (req, res) => {
   try {
     const request = await axios.get(
@@ -113,7 +113,7 @@ const getMovieTopRatedPage = async (req, res) => {
   }
 };
 
-// Get Movie Upcoming Page
+
 const getMovieUpcomingPage = async (req, res) => {
   try {
     const request = await axios.get(
@@ -125,7 +125,7 @@ const getMovieUpcomingPage = async (req, res) => {
   }
 };
 
-// Get Movie Details Page
+
 const getMovieDetailsPage = async (req, res) => {
   try {
     const request = await axios.get(
@@ -137,7 +137,7 @@ const getMovieDetailsPage = async (req, res) => {
   }
 };
 
-// Get Movie Genre Page
+
 const getMovieGenrePage = async (req, res) => {
   try {
     const request = await axios.get(
@@ -149,7 +149,7 @@ const getMovieGenrePage = async (req, res) => {
   }
 };
 
-// Get Show Trending Page
+
 const getShowTrendingPage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -161,7 +161,7 @@ const getShowTrendingPage = async (req, res) => {
     }
   };
 
-// Get Show Airing Today Page
+
 const getShowAiringTodayPage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -173,7 +173,7 @@ const getShowAiringTodayPage = async (req, res) => {
     }
   };
 
-// Get Show Popular Page
+
 const getShowPopularPage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -185,7 +185,7 @@ const getShowPopularPage = async (req, res) => {
     }
   };
 
-// Get Show Top Rated Page
+
 const getShowTopRatedPage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -197,7 +197,7 @@ const getShowTopRatedPage = async (req, res) => {
     }
   };
 
-// Get Show On The Air Page
+
 const getShowOnTheAirPage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -209,7 +209,7 @@ const getShowOnTheAirPage = async (req, res) => {
     }
   };
 
-// Get Show Details Page
+
 const getShowDetailsPage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -221,7 +221,7 @@ const getShowDetailsPage = async (req, res) => {
     }
   };
 
-// Get Show Episodes
+
 const getShowEpisodesPage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -233,7 +233,7 @@ const getShowEpisodesPage = async (req, res) => {
     }
   };
 
-// Get Show Genre Page
+
 const getShowGenrePage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -245,7 +245,7 @@ const getShowGenrePage = async (req, res) => {
     }
   };
 
-// Get Person Details Page
+
 const getPersonDetailsPage = async (req, res) => {
     try {
       const request = await axios.get(
@@ -257,7 +257,7 @@ const getPersonDetailsPage = async (req, res) => {
     }
   };
 
-// Get Search Results
+
 const getSearchResults = async (req, res) => {
     try {
       const request = await axios.get(

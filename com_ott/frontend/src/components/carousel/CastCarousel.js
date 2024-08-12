@@ -24,7 +24,7 @@ const CastCarousel = ({ data, heading }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // setDynamicWidth on first mount
+    
     setDynamicWidth(itemsContainerRef.current.offsetWidth);
 
     const setSizer = () => {
@@ -32,11 +32,11 @@ const CastCarousel = ({ data, heading }) => {
     };
     window.addEventListener("resize", setSizer);
 
-    // cleanup function
+   
     return () => window.removeEventListener("resize", setSizer);
   }, [dynamicWidth, carouselContainerRef]);
 
-  // handle scroll
+  
   const handleSlider = (direction) => {
     if (direction === "left") {
       itemsContainerRef.current.scrollBy(-dynamicWidth - 15, 0);
@@ -47,7 +47,7 @@ const CastCarousel = ({ data, heading }) => {
   };
 
   const handleScroll = () => {
-    // last child visibility check
+    
     if (
       carouselContainerRef.current.lastElementChild.getBoundingClientRect()
         .right < window.innerWidth
@@ -85,10 +85,10 @@ const CastCarousel = ({ data, heading }) => {
 
   return (
     <div className="w-full pl-4 md:pl-10 lg:pl-12">
-      {/* Card Actions Body */}
+     
       {castCardAction && <CastCardActions mediaType="person" />}
 
-      {/* Heading */}
+      
       <div
         className="flex items-center font-medium mt-10 mb-2 sm:mb-3 md:mb-4 gap-4"
         data-cy="cast-carousel-heading"
@@ -96,15 +96,15 @@ const CastCarousel = ({ data, heading }) => {
         <h2 className="text-lg sm:text-2xl text-white">{heading}</h2>
       </div>
 
-      {/* Carousel Wrapper */}
+      
       <div className="relative h-fit w-full">
-        {/* Carousel */}
+       
         <div
           className="carousel w-full lg:py-4 py-2 pr-2 space-x-4 rounded-box"
           ref={itemsContainerRef}
           onScroll={dynamicWidth > 768 ? handleScroll : () => null}
         >
-          {/* Left Cursor */}
+          
           {dynamicWidth > 768 && (
             <div
               ref={leftButtonRef}
@@ -119,13 +119,13 @@ const CastCarousel = ({ data, heading }) => {
             </div>
           )}
 
-          {/* Items Container */}
+         
           <div
             className="flex gap-3 transition-all ease-in"
             ref={carouselContainerRef}
             data-cy="cast-carousel-items-container"
           >
-            {/* Item */}
+           
             {data &&
               data.map((item) => (
                 <div
@@ -161,7 +161,7 @@ const CastCarousel = ({ data, heading }) => {
                       </h3>
                     </Link>
 
-                    {/* Card Actions */}
+                   
                     <div
                       className="w-full flex justify-end items-center"
                       onClick={() => {
@@ -177,7 +177,7 @@ const CastCarousel = ({ data, heading }) => {
           </div>
         </div>
 
-        {/* Right Cursor */}
+       
         {dynamicWidth > 768 && (
           <div
             ref={rightButtonRef}

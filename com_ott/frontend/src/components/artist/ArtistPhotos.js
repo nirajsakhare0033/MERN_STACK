@@ -51,13 +51,13 @@ const ArtistPhotos = ({ data }) => {
   };
   return (
     <div className="w-full">
-      {/* Modal */}
+     
       <input type="checkbox" id="my-modal-4" className="modal-toggle" />
       <label
         htmlFor="my-modal-4"
         className="modal cursor-pointer bg-[rgba(0,0,0,0.5)] backdrop-blur p-4 md:p-10 lg:p-12"
       >
-        {/* Actions */}
+        
         <label
           className="absolute top-0 right-0 lg:top-1 lg:right-1 btn btn-ghost btn-circle z-50"
           htmlFor="my-modal-4"
@@ -93,7 +93,7 @@ const ArtistPhotos = ({ data }) => {
         </label>
       </label>
 
-      {/* Posters */}
+     
       <h2
         className="text-xl lg:text-2xl font-medium mb-4 md:mb-5"
         data-cy="artist-photos-headline"
